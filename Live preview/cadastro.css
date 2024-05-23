@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    font-family: "Noto Sans", sans-serif;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    border: 2px solid red;
+    flex-direction: column;
+    width: 50vw;
+    max-width: 500px;
+    background-color: transparent;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.9);
+    padding: 20px; /* Adiciona espaço interno */
+}
+
+.titulo h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-cad {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-cad div {
+    margin-bottom: 15px; /* Espaço entre os campos */
+}
+
+.form-cad label {
+    margin-bottom: 5px; /* Espaço entre o label e o input */
+}
+
+.form-cad input {
+    width: 100%; /* Garante que os inputs ocupem toda a largura do contêiner */
+    padding: 10px; /* Adiciona espaço interno aos inputs */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total do input */
+}
+
+.btn-cdn {
+    text-align: center; /* Centraliza o botão */
+}
+
+.btn-cdn .btn {
+    width: 100%; /* Garante que o botão ocupe toda a largura do contêiner */
+}

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+html, body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/Background.jpg');
+}
+
+
+body * {
+    font-family: "Noto Sans", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+#btn-cad{
+    font-size: 12pt;
+    position: fixed;
+    top: 0.5%;
+    right: 0.5%;
+    background-color: rgba(60,60,60,0.5);
+    color: rgba(255,255,255,1);
+    font-weight: 300;
+}
+
+.div-right{
+    max-width: 500px;
+    text-shadow: 6px 6px 5px rgba(0,0,0,0.35);
+    background-color: rgba(266,266,266,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    flex-direction: column;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    --webkit-filter: blur(10px);
+    box-shadow: 3px 3px 6px;
+    padding: 10px 10px;
+}
+
+.div-right > h1{
+    font-weight: 600;
+    display: inline;
+    text-align: center;
+    width: 100%;
+    margin: 10pt 10px;
+}
+
+.left-img{
+    width: 35vw;
+}
+.form-div{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.user-label{
+    display: block;
+    margin: 2px 0px;
+}
+.pass-label{
+    display: block;
+    margin: 2px 0px;
+}
+.user-input{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border:2px solid red;
+    width: 80%;
+}
+
+#btn-login{
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    min-width: 50%;
+    box-shadow: 4px 5px 10px rgba(53, 53, 53, 0.6);    
+}

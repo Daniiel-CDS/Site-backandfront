@@ -1,0 +1,130 @@
+body {
+    background-image: url('../images/Blackandyellow.jpg');
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+body *{
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+}
+
+/* .main corrigido */
+.main {
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column; /* Flex direction para coluna */
+    width: 50vw;
+    max-width: 700px;
+    background-color:transparent;
+    backdrop-filter: blur(160px);
+    --webkit-filter: blur(30px);
+    box-shadow: 6px 6px 43px rgba(255, 255, 255, 0.35);
+   /* padding: 20px;  Adiciona espaço interno */
+}
+
+/* Título centralizado */
+.titulo h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 0px;
+    text-shadow: 4px 4px 10px;
+    margin-top: 20px;
+}
+
+/* Formulário com direção em coluna */
+.form-cad {
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Espaço entre os campos do formulário */
+.form-cad div {
+    margin-bottom: 15px; /* Espaço entre os campos */
+}
+
+/* Espaço entre o label e o input */
+.form-cad label {
+    font-size: 1.25rem;
+    font-weight: 500;
+    width: 100%;
+    text-shadow: 4px 4px 10px;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 12px rgba(255, 255, 255,0.35);
+    margin-bottom: 5px; /* Espaço entre o label e o input */
+}
+.brain_img{
+    width: 35vw;
+}
+/* Inputs ocupam toda a largura do contêiner */
+.form-cad input {
+    color: white;
+    background-color: transparent;
+    border-radius: 10px;
+    margin: 0px 20px 0px 0px;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Garante que os inputs ocupem toda a largura do contêiner */
+    padding: 10px; /* Adiciona espaço interno aos inputs */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total do input */
+    box-shadow: 1px 1px 6px #0000001c;
+    outline: 3px solid white;
+}
+.form-cad input::placeholder{
+    text-shadow: 2px 2px 6px white;
+    text-align: center;
+    font-weight: 200;
+    color: white;
+}
+.form-cad input:hover{
+    background-color: #d5b900;
+
+}
+
+.form-cad input:focus-visible{
+    background-color: rgb(77, 76, 76);
+    color: black;
+    outline: 3px solid #d5b900;
+}
+
+/* Centraliza o botão */
+.btn-cdn {
+    text-align: center; /* Centraliza o botão */
+}
+
+/* Botão ocupa toda a largura do contêiner */
+.btn-cdn .btn {
+    box-shadow: 2px 2px 23px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    background-color: black;
+    width: 60%; /* Garante que o botão ocupe toda a largura do contêiner */
+    outline: 3px solid white;
+}
+
+.btn-cdn button:hover {
+    background-color: rgb(213, 185, 0);
+}
+
+
+
+@media screen and (max-width: 1330px){
+  .brain_img{
+    display: none;
+
+  }
+  .main{
+    height: 70%;
+    width: 90vw;
+  }
+}
