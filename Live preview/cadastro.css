@@ -1,51 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&display=swap');
+
+body * {
+    font-family: "Edu TAS Beginner", cursive;
+}
+
 body {
     display: flex;
-    font-family: "Noto Sans", sans-serif;
-    height: 100vh;
     width: 100vw;
+    background-image: url('backgroung.jpg');
+    background: cover no-repeat;
+    backdrop-filter: blur(3px);
+    height: 90vh;
     align-items: center;
     justify-content: center;
 }
 
-.main {
+
+.main{
+    background-color: rgba(0,100,255,0.35);
+    border-radius: 80px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.35);
+    margin: auto;
+    backdrop-filter: blur(40px);
+    height: 80%;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+.img-div {
+    margin: auto;
+    width: 35%;
+    border: 1px solid rgba(0,150,230,0.8);
     display: flex;
-    border: 2px solid red;
-    flex-direction: column;
-    width: 50vw;
-    max-width: 500px;
-    background-color: transparent;
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.9);
-    padding: 20px; /* Adiciona espaço interno */
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.35);
+    border-radius: 60px;
+    align-items: center;
+    justify-content: center;
 }
 
-.titulo h1 {
+.nome{
+
+    text-shadow: 3px 3px 10px rgba(0,0,0,6);
+    color: red;
+    font-weight: 900;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.4);
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.form-cad {
+.twitch{
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0px 15px 0px;
+    text-align: center;
+}
+.instagram{
+    margin: auto;
+    justify-content: center;
+    width: 70%;
+    align-items: center;
+    padding: 15px 0px 15px 0px;
+    text-align: center;
+}
+.twitter{
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    align-items: center;
+    padding: 15px 0px 15px 0px;
+    text-align: center;
+}
+
+
+.twitch > button{
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
+    color: red;
+    font-weight: 900;
+    width: 60%;
+    background-color: rgba(130,0,200,0.35);
+    backdrop-filter: blur(30px);
+    border-radius: 15px;
+    padding: 0px 15px 0px 15px;
+}
+.twitter > button{
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
+    color: red;
+    font-weight: 900;
+    width: 60%;
+    background-color: rgba(130,0,200,0.35);
+    backdrop-filter: blur(30px);
+    border-radius: 15px;
+    padding:0px 12px 0px 12px;
+}
+.instagram > button{
+    text-shadow: 3px 3px 10px rgba(0,0,0,3.5);
+    color: red;
+    font-weight: 900;
+    width: 60%;
+    background-color: rgba(130,0,200,0.35);
+    backdrop-filter: blur(30px);
+    border-radius: 15px;
+    /* padding: 0px 15px 0px 15px; */
+}
+
+
+
+.img{
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.35);
+    border-radius: 50px;
+    margin: auto;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-.form-cad div {
-    margin-bottom: 15px; /* Espaço entre os campos */
-}
 
-.form-cad label {
-    margin-bottom: 5px; /* Espaço entre o label e o input */
-}
-
-.form-cad input {
-    width: 100%; /* Garante que os inputs ocupem toda a largura do contêiner */
-    padding: 10px; /* Adiciona espaço interno aos inputs */
-    box-sizing: border-box; /* Inclui padding e border no tamanho total do input */
-}
-
-.btn-cdn {
-    text-align: center; /* Centraliza o botão */
-}
-
-.btn-cdn .btn {
-    width: 100%; /* Garante que o botão ocupe toda a largura do contêiner */
+body > button::hover{
+    cursor: pointer;
 }

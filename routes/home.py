@@ -1,5 +1,8 @@
 from flask import Blueprint, render_template, request, flash, redirect, session
 from databases.models.usuario import usuario
+from databases.models.permissoes import permissoes
+from databases.models.usuario_permissoes import usuario_permissoes as usuariopermissao
+
 import bcrypt
 import time
 home_route = Blueprint("home", __name__)
@@ -29,13 +32,13 @@ def logar():
     try:
         # Verifica se o usuário existe pelo e-mail.
         usuario_consulta = usuario.get(usuario.email == email)
-        print(senha.encode('utf-8'),usuario_consulta.senha.encode('utf-8'))
 
         # Verifica a senha (em produção, use hash de senha).
         if bcrypt.checkpw(senha.encode('utf-8'), usuario_consulta.senha.encode('utf-8')):
             flash('Usuário logado com sucesso', 'success')
             session['logado'] = True
-            return redirect('/')
+            session['id'] = usuario_consulta.id
+            return redirect(f'/profile/{usuario_consulta.id}')
         else:
             flash('Dados incorretos', 'error')
             return redirect('/login')
@@ -43,14 +46,12 @@ def logar():
         flash('Usuário não encontrado', 'error')
         return redirect('/login')
 
-
 @home_route.route('/cadastro', methods=['GET','POST'])
 def form_cadastro():
     return render_template('cadastro.html') 
 
 @home_route.route('/cadastrar', methods=['POST'])
 def cadastrar():
-    senha = ""
     nome = request.form['user']
     email = request.form['email']
     pass1 = request.form['pass1']
@@ -71,4 +72,23 @@ def cadastrar():
     
     return render_template('cadastro.html')
     
-
+@home_route.route('/profile/<int:profile_id>')
+def profile(profile_id):
+    
+    if 'logado' in session and session['logado'] is True:
+        if session['id'] == profile_id:
+            ousuario = usuario.get_by_id(profile_id)
+            nome = ousuario.nome
+            email = ousuario.email
+            permisao = (permissoes
+                                .select(permissoes.nome_permissao)
+                                .join(usuariopermissao, on=(permissoes.id == usuariopermissao.permissao))
+                                .join(usuario, on=(usuariopermissao.usuario == usuario.id))
+                                .where(usuario.id == profile_id))
+            permissoe = [perm.nome_permissao for perm in permisao]
+            print(permissoe[0])
+            return render_template('profile.html',nome=nome, email=email,permissoes=permissoe[0])
+    else:
+        flash('FAÇA O LOGIN PARA ACESSAR ESSA PAGINA', 'error')
+        return redirect('/login')
+    return redirect('/login')

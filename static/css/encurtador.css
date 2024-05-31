@@ -1,0 +1,45 @@
+.body{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.mb-3{
+    height: auto;
+    width: 50%;
+    margin: 0px 50px 0px 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-label{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#butaum{
+    display: block;
+}
+
+.form{
+    border: 2px solid red;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.form-control{
+    margin-bottom: 15px;
+}

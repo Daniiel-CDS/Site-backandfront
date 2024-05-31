@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request
-from databases.clientes import clients
 from databases.models.cliente import Cliente
+import bcrypt
 
 clientes_route = Blueprint("clientes", __name__)
 """
@@ -69,3 +69,8 @@ def delete_cliente(client_id):
     cliente.delete_instance()
 
     return {'delete':'ok'}
+
+
+@clientes_route.route('/<int:client_id>/delete', methods=['POST'])
+def subir_imagem():
+    return '' 

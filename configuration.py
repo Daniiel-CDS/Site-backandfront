@@ -1,9 +1,14 @@
 from datetime import timedelta
 from routes.home import home_route
 from routes.clientes import clientes_route
+from routes.encurtador import encurtador
 from databases.database import db
 from databases.models.cliente import Cliente
 from databases.models.usuario import usuario
+from databases.models.permissoes import permissoes
+from databases.models.usuario_permissoes import usuario_permissoes
+from databases.models.links import Link
+
 
 #Configura tudo
 
@@ -16,13 +21,13 @@ def configure_all(app):
 def configure_routes(app):
     app.register_blueprint(home_route)
     app.register_blueprint(clientes_route, url_prefix="/clientes")
+    app.register_blueprint(encurtador, url_prefix="/enc")
 
 def configure_app(app):
-    app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(seconds=2)
+    app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
     app.config['SECRET_KEY'] = "secret"
 
 #Configura o db e criar as tabelas do Banco de Dados;
 def configure_db():
     db.connect()
-    db.create_tables([Cliente])
-    db.create_tables([usuario])
+    db.create_tables([Cliente,permissoes,usuario,usuario_permissoes,Link])
